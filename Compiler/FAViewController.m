@@ -95,6 +95,7 @@
         [view removeFromSuperview];
     }
 }
+
 #pragma pickerViewDelegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;

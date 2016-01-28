@@ -32,6 +32,10 @@
 //    [self repaint];
 }
 
+- (void)layoutSubviews {
+  [self setNeedsDisplay];
+}
+
 - (void)newTree:(NSMutableArray *)mapExpr Integer:(NSMutableArray *)n {
     Tree *t = [[Tree alloc] initWithMap:mapExpr];
     self.cs = t.cs;
@@ -138,7 +142,6 @@
     CGContextSetFillColorWithColor(ctx, [UIColor greenColor].CGColor);
     CGContextDrawPath(ctx, kCGPathStroke);
     CGContextAddArc(ctx, x, y, r, startAngle, arcAngle, 1);
-//    CGContextFillPath(ctx);
 }
 - (int)getAngle:(int) x y:(int) y p:(CGPoint) p{
     int dx,dy;
